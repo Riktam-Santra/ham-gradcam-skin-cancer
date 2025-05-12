@@ -13,10 +13,6 @@ app.config['UPLOAD_FOLDER'] = UPLOAD_FOLDER
 
 model = tf.keras.models.load_model(MODEL_PATH)
 
-# "Call" the model once
-# dummy_input = tf.zeros((1, 28, 28, 3))
-# model(dummy_input)  # Important!
-
 model.summary()
 
 @app.route("/", methods=["GET", "POST"])
@@ -39,4 +35,4 @@ def upload_predict():
     return render_template("index.html")
 
 if __name__ == "__main__":
-    app.run(host="127.0.0.1", port=8080, debug=True)
+    app.run(host="127.0.0.1", port=15080, debug=True)
